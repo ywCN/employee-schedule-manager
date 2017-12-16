@@ -6,7 +6,7 @@ import { Card, CardSection, Input, Button } from './common';
 
 class LoginForm extends Component {
     onEmailChange(text) {
-        
+        this.props.emailChanged(text);
     }
 
     render() {
@@ -38,4 +38,4 @@ class LoginForm extends Component {
     }
 }
 
-export default LoginForm;
+export default connect(null, { emailChanged })(LoginForm);
