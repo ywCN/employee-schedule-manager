@@ -1,3 +1,6 @@
 {
-    "extends": "rallycoding"
+    "extends": "rallycoding",
+    "rule": {
+        "arrow-body-style": 0
+    }
 }
