@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { emailChanged } from '../actions';
 import { Card, CardSection, Input, Button } from './common';
 
 
