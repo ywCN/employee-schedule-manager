@@ -46,7 +46,7 @@ const loginUserSuccess = (dispatch, user) => {
         payload: user
     });
 
-    Actions.employeeeList();
+    Actions.employeeList();
 };
 
 // helper function for login failure
