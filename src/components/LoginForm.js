@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { View, Text } from 'react-native';
 import { connect } from 'react-redux';
 import { emailChanged, passwordChanged, loginUser } from '../actions';
 import { Card, CardSection, Input, Button } from './common';
@@ -23,7 +24,7 @@ class LoginForm extends Component {
     renderError() {
         if (this.props.error) {
             return (
-                <View style={{ backgroundColor: 'white'}}>
+                <View style={{ backgroundColor: 'white' }}>
                     <Text style={styles.errorTextStyle}>
                         {this.props.error}
                     </Text>
