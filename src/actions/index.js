@@ -25,6 +25,9 @@ export const loginUser = ({ email, password }) => { // this pattern is for asyn 
         firebase.auth().signInWithEmailAndPassword(email, password)
             .then(user => { // manually dispatch
                 dispatch({ type: LOGIN_USER_SUCCESS, payload: user });
+            })
+            .catch(() => {
+                firebase.auth().createUserWithEmailAndPassword(email, password);
             });
     };  
 };
