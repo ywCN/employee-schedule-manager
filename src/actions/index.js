@@ -18,7 +18,7 @@ export const passwordChanged = (text) => {
     };
 };
 
-export const loginUser = ({ email, password }) => {
+export const loginUser = ({ email, password }) => { // this pattern is for asyn action
     // return a function, so Redux will immediate call the function
     return (dispatch) => {
         firebase.auth().signInWithEmailAndPassword(email, password)
