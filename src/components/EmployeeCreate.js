@@ -6,16 +6,27 @@ class EmployeeCreate extends Component {
         return (
             <Card>
                 <CardSection>
-                </CardSecton>
+                    <Input
+                        lable='Name'
+                        placeholder='Jane'
+                    />
+                </CardSection>
 
                 <CardSection>
-                </CardSecton>
+                    <Input
+                        label='Phone'
+                        placeholder='555-555-5555'
+                    />
+                </CardSection>
 
                 <CardSection>
-                </CardSecton>
+                </CardSection>
 
                 <CardSection>
-                </CardSecton>
+                    <Button>
+                        Create
+                    </Button>
+                </CardSection>
             </Card>
         );
     }
