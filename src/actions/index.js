@@ -25,7 +25,9 @@ export const loginUser = ({ email, password }) => { // this pattern is for asyn 
     return (dispatch) => { // since we have dispatch, we can dispatch many actions
         firebase.auth().signInWithEmailAndPassword(email, password)
             .then(user => loginUserSuccess(dispatch, user))
-            .catch(() => {
+            .catch((error) => {
+                console.log(error); // helps find bug in AuthReducer
+                
                 firebase.auth().createUserWithEmailAndPassword(email, password)
                     .then(user => loginUserSuccess(dispatch, user))
                     .catch(() => loginUserFail(dispatch));
