@@ -75,12 +75,9 @@ const styles = {
     }
 };
 
-const mapStateToProps = state => {
-    return {
-        email: state.auth.email,
-        password: state.auth.password,
-        error: state.auth.error
-    };
+const mapStateToProps = ({ auth }) => {
+    const { email, password, error, loading } = auth;
+    return { email, password, error, loading }; // {email:email}
 };
 
 export default connect(mapStateToProps, {
