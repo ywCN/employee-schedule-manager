@@ -22,7 +22,7 @@ export const loginUser = ({ email, password }) => {
     // return a function, so Redux will immediate call the function
     return (dispatch) => {
         firebase.auth().signInWithEmailAndPassword(email, password)
-            .then(user => {
+            .then(user => { // manually dispatch
                 dispatch({ type: 'LOGIN_USER_SUCCESS', payload: user });
             });
     };  
