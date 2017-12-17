@@ -19,7 +19,7 @@ class LoginForm extends Component {
         this.props.loginUser({ email, password });
     }
 
-    // helper for find out what kind of error
+    // helper function to show error
     renderError() {
         if (this.props.error) {
             return (
@@ -53,6 +53,8 @@ class LoginForm extends Component {
                         value={this.props.password}
                     />
                 </CardSection>
+
+                {this.renderError()}
 
                 <CardSection>
                     <Button onPress={this.onButtonPress.bind(this)}>
