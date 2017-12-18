@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Communications from 'react-native-communications';
 import EmployeeForm from './EmployeeForm';
 import { employeeUpdate, employeeSave } from '../actions';
-import { Card, CardSection, Button } from './common';
+import { Card, CardSection, Button, Confirm } from './common';
 
 class EmployeeEdit extends Component {
     componentWillMount() {
@@ -30,6 +30,7 @@ class EmployeeEdit extends Component {
         return (
             <Card>
                 <EmployeeForm />
+
                 <CardSection>
                     <Button onPress={this.onButtonPress.bind(this)}>
                         Save Changes
@@ -41,6 +42,18 @@ class EmployeeEdit extends Component {
                         Text Schedule
                     </Button>
                 </CardSection>
+
+                <CardSection>
+                    <Button>
+                        Fire Employee
+                    </Button>
+                </CardSection>
+
+                <Confirm
+                    visible={}
+                >
+                    Are you sure you want to delete this?
+                </Confirm>
             </Card>
         );
     }
