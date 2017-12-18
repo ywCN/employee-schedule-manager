@@ -20,5 +20,5 @@ export const employeeCreate = ({ name, phone, shift }) => {
             firebase.database().ref(`/users/${currentUser.uid}/employees`) // path to JSON store
         .push({ name, phone, shift })
         .then(() => Actions.employeeList());
-    }
+    };
 };
