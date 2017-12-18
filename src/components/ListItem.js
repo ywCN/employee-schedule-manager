@@ -4,8 +4,8 @@ import { Actions } from 'react-native-router-flux';
 import { CardSection } from './common';
 
 class ListItem extends Component {
-    onRowPress() { // use the same form to edit employee
-        Actions.employeeCreate({ employee: this.props.employee });
+    onRowPress() {
+        Actions.employeeEdit({ employee: this.props.employee });
     }
 
     render() {
