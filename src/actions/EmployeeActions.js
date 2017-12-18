@@ -11,12 +11,14 @@ export const employeeUpdate = ({ prop, value }) => {
     };
 };
 
-// we do not need this method to return anything
+// we do not need this method to respond
 // so nothing need to be dispatched
 export const employeeCreate = ({ name, phone, shift }) => {
     const { currentUser } = firebase.auth();
 
-    firebase.database().ref(`/users/${currentUser.uid}/employees`) // path to JSON store
+    return () => { // pretend we are going to use Redux-Thunk, but we are not
+            firebase.database().ref(`/users/${currentUser.uid}/employees`) // path to JSON store
         .push({ name, phone, shift })
         .then(() => Actions.employeeList());
+    }
 };
