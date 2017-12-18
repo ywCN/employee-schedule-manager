@@ -8,7 +8,7 @@ import { Card, CardSection, Button, Confirm } from './common';
 
 class EmployeeEdit extends Component {
     state = { showModal: false };
-    
+
     componentWillMount() {
         // for each prop of employee, call action creato with key-value pair
         _.each(this.props.employee, (value, prop) => {
@@ -46,13 +46,13 @@ class EmployeeEdit extends Component {
                 </CardSection>
 
                 <CardSection>
-                    <Button>
+                    <Button onPress={() => this.setState({ showModel: !this.state.showModal })}>
                         Fire Employee
                     </Button>
                 </CardSection>
 
                 <Confirm
-                    visible={}
+                    visible={this.state.showModal}
                 >
                     Are you sure you want to delete this?
                 </Confirm>
