@@ -28,17 +28,17 @@ class EmployeeEdit extends Component {
         Communications.text(phone, `Your upcoming shift is on ${shift}`);
     }
 
+    onAccept() { // init employee deletion process
+        const { uid } = this.props.employee;
+
+        this.props.employeeDelete({ uid });
+    }
+
+    onDecline() { // toggle visible
+        this.setState({ showModal: false });
+    }
+    
     render() {
-        onAccept() { // init employee deletion process
-            const { uid } = this.props.employee;
-
-            this.props.employeeDelete({ uid });
-        }
-
-        onDecline() { // toggle visible
-            this.setState({ showModal: false });
-        }
-
         return (
             <Card>
                 <EmployeeForm />
