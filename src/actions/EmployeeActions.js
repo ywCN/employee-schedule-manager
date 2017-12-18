@@ -11,5 +11,6 @@ export const employeeUpdate = ({ prop, value }) => {
 };
 
 export const employeeCreate = ({ name, phone, shift }) => {
-    firebase.database().ref('/users/userId/employees') // path to JSON store
+    const { currentUser } = firebase.auth();
+    firebase.database().ref(`/users/${currentUser.uid}/employees`); // path to JSON store
 };
