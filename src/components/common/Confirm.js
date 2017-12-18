@@ -4,7 +4,7 @@ import { CardSection } from './CardSection';
 import { Button } from './Button';
 
 const Confirm = ({ children, visible, onAccept, onDecline }) => {
-
+    const { containerStyle, textStyle, cardSectionStyle } = styles;
 
     return ( // can think Modal as a big wrapper
         <Modal
@@ -13,9 +13,9 @@ const Confirm = ({ children, visible, onAccept, onDecline }) => {
             animationType='slide'
             onRequestClose={() => {}} // empty function for doing nothing
         >
-            <View>
-                <CardSection>
-                    <Text>{children}</Text>
+            <View style={containerStyle}>
+                <CardSection style={cardSectionStyle}>
+                    <Text style={textStyle}>{children}</Text>
                 </CardSection>
 
                 <CardSection>
@@ -28,7 +28,7 @@ const Confirm = ({ children, visible, onAccept, onDecline }) => {
 };
 
 const styles = {
-    cardSelectionStyle: {
+    cardSectionStyle: {
         justifyContent: 'center'
     },
     textStyle: {
