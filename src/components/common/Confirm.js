@@ -4,6 +4,8 @@ import { CardSection } from './CardSection';
 import { Button } from './Button';
 
 const Confirm = ({ children }) => {
+
+
     return ( // can think Modal as a big wrapper
         <Modal>
             <View>
@@ -12,8 +14,8 @@ const Confirm = ({ children }) => {
                 </CardSection>
 
                 <CardSection>
-                    <Button>Yes</Button>
-                    <Button>No</Button> 
+                    <Button onPress={onAccept}>Yes</Button>
+                    <Button onPress={onDecline}>No</Button> 
                 </CardSection>
             </View>
         </Modal>
