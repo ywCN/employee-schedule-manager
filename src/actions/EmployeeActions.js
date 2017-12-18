@@ -19,6 +19,7 @@ export const employeeCreate = ({ name, phone, shift }) => {
     return () => { // pretend we are going to use Redux-Thunk, but we are not
             firebase.database().ref(`/users/${currentUser.uid}/employees`) // path to JSON store
         .push({ name, phone, shift })
-        .then(() => Actions.employeeList());
+        .then(() => Actions.employeeList({ type: 'reset' }));
+        // { type: 'reset' } make the back button disappear
     };
 };
