@@ -1,7 +1,8 @@
 import firebase from 'firebase';
 import { Actions } from 'react-native-router-flux';
 import {
-    EMPLOYEE_UPDATE
+    EMPLOYEE_UPDATE,
+    EMPLOYEE_CREATE
 } from './types';
 
 export const employeeUpdate = ({ prop, value }) => {
@@ -11,15 +12,16 @@ export const employeeUpdate = ({ prop, value }) => {
     };
 };
 
-// we do not need this method to respond
-// so nothing need to be dispatched
 export const employeeCreate = ({ name, phone, shift }) => {
     const { currentUser } = firebase.auth();
 
-    return () => { // pretend we are going to use Redux-Thunk, but we are not
+    return (dispatch) => { // pretend we are going to use Redux-Thunk, but we are not
             firebase.database().ref(`/users/${currentUser.uid}/employees`) // path to JSON store
         .push({ name, phone, shift })
-        .then(() => Actions.employeeList({ type: 'reset' }));
+        .then(() => {
+            dispatch({ type: EMPLOYEE_CREATE });
+            Actions.employeeList({ type: 'reset' });
+        });
         // { type: 'reset' } make the back button disappear
     };
 };
