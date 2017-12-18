@@ -16,24 +16,23 @@ export const employeeUpdate = ({ prop, value }) => {
 export const employeeCreate = ({ name, phone, shift }) => {
     const { currentUser } = firebase.auth();
 
-    return (dispatch) => { // pretend we are going to use Redux-Thunk, but we are not
-            firebase.database().ref(`/users/${currentUser.uid}/employees`) // path to JSON store
+    return (dispatch) => {
+        firebase.database().ref(`/users/${currentUser.uid}/employees`)
         .push({ name, phone, shift })
         .then(() => {
             dispatch({ type: EMPLOYEE_CREATE });
             Actions.employeeList({ type: 'reset' });
         });
-        // { type: 'reset' } make the back button disappear
     };
 };
 
-export const employeeFetch = () => {
+export const employeesFetch = () => {
     const { currentUser } = firebase.auth();
 
     return (dispatch) => {
-        firebase.database().ref(`/users/${currentUser.uid}/employees`) // make a connection
-            .on('value', snapshot => { // watch for new things, this is persistent
-                dispatch({ type: EMPLOYEES_FETCH_SUCCESS, payload: snapshot.val() });
-            });
+        firebase.database().ref(`/users/${currentUser.uid}/employees`)
+        .on('value', snapshot => { // { type: 'reset' } make the back button disappear
+            dispatch({ type: EMPLOYEES_FETCH_SUCCESS, payload: snapshot.val() });
+        });
     };
 };
