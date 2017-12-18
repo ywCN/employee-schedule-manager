@@ -5,7 +5,8 @@ import {
 const INITIAL_STATE = {
     name: '',
     phone: '',
-    shift: ''
+    shift: 
+    // shift: 'Monday' // can work but not good
 };
 
 export default (state = INITIAL_STATE, action) => {
