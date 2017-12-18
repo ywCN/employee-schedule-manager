@@ -9,7 +9,7 @@ class EmployeeCreate extends Component {
             <Card>
                 <CardSection>
                     <Input
-                        lable='Name'
+                        label='Name'
                         placeholder='Jane'
                         
                         value={this.props.name}
