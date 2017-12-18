@@ -7,7 +7,11 @@ const Confirm = ({ children }) => {
 
 
     return ( // can think Modal as a big wrapper
-        <Modal>
+        <Modal
+            transparent
+            animationType='slide'
+            onRequestClose={() => {}} // empty function for doing nothing
+        >
             <View>
                 <CardSection>
                     <Text>{children}</Text>
