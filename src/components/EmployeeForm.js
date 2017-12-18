@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { employeeUpdate } from '../actions';
 import { View, Text, Picker } from 'react-native';
 import { CardSection, Input } from './common';
 
@@ -12,7 +14,7 @@ class EmployeeForm extends Component {
                         placeholder='Jane'
                         
                         value={this.props.name}
-                        // onChangeText={text => this.props.employeeUpdate({ prop: 'name', value: text })}
+                // onChangeText={text => this.props.employeeUpdate({ prop: 'name', value: text })}
                         onChangeText={value => this.props.employeeUpdate({ prop: 'name', value })}
                     />
                 </CardSection>
@@ -23,7 +25,7 @@ class EmployeeForm extends Component {
                         placeholder='555-555-5555'
 
                         value={this.props.phone}
-                        // onChangeText={text => this.props.employeeUpdate({ prop: 'phone', value: text })}
+                // onChangeText={text => this.props.employeeUpdate({ prop: 'phone', value: text })}
                         onChangeText={value => this.props.employeeUpdate({ prop: 'phone', value })}
                     />
                 </CardSection>
@@ -57,4 +59,10 @@ const styles = {
     }
 };
 
-export default EmployeeForm;
+const mapStateToProps = (state) => {
+    const { name, phone, shift } = state.employeeForm;
+
+    return { name, phone, shift };
+};
+
+export default connect(mapStateToProps, { employeeUpdate })(EmployeeForm);
