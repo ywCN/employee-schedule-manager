@@ -15,7 +15,7 @@ const INITIAL_STATE = {
 };
 
 export default (state = INITIAL_STATE, action) => {
-    console.log(action); // test
+    // console.log(action); // test
     switch (action.type) {
         case EMAIL_CHANGED:
             // state.email = action.payload; will not create new state
