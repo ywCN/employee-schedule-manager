@@ -26,12 +26,15 @@ class EmployeeCreate extends Component {
 
                         value={this.props.phone}
                         // onChangeText={text => this.props.employeeUpdate({ prop: 'phone', value: text })}
-                        onChangeText={value => this.props.employeeUpdate({ prop: 'phone', value})}
+                        onChangeText={value => this.props.employeeUpdate({ prop: 'phone', value })}
                     />
                 </CardSection>
 
                 <CardSection>
-                    <Picker>
+                    <Picker
+                        selectedValue={this.props.shift}
+                        onValueChange={value => this.props.employeeUpdate({ prop: 'shift', value })}
+                    >
                         <Picker.Item label='Monday' value='Monday' />
                         <Picker.Item label='Tuesday' value='Tuesday' />
                         <Picker.Item label='Wednesday' value='Wednesday' />
