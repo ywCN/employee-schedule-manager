@@ -31,8 +31,8 @@ export const employeeFetch = () => {
     const { currentUser } = firebase.auth();
 
     return (dispatch) => {
-        firebase.database().ref(`/users/${currentUser.uid}/employees`)
-            .on('value', snapshot => {
+        firebase.database().ref(`/users/${currentUser.uid}/employees`) // make a connection
+            .on('value', snapshot => { // watch for new things, this is persistent
                 dispatch({ type: EMPLOYEES_FETCH_SUCCESS, payload: snapshot.val() });
             });
     };
