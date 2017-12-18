@@ -15,8 +15,8 @@ class EmployeeEdit extends Component {
     
     onButtonPress() {
         const { name, phone, shift } = this.props;
-
-        console.log(name, phone, shift); // detect changes
+        
+        // console.log(name, phone, shift); // detect changes
     }
 
     render() {
