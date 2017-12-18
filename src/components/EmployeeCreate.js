@@ -29,8 +29,8 @@ class EmployeeCreate extends Component {
                         onChangeText={value => this.props.employeeUpdate({ prop: 'phone', value })}
                     />
                 </CardSection>
-
-                <CardSection>
+                
+                <CardSection style={{ flexDirection: 'column' }}>
                     <Text style={styles.pickerTextStyle}>Shift</Text>
                     <Picker
                         selectedValue={this.props.shift}
