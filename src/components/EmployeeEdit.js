@@ -29,6 +29,14 @@ class EmployeeEdit extends Component {
     }
 
     render() {
+        onAccept() { // init employee deletion process
+            
+        }
+
+        onDecline() { // toggle visible
+            this.setState({ showModal: false });
+        }
+
         return (
             <Card>
                 <EmployeeForm />
@@ -53,6 +61,8 @@ class EmployeeEdit extends Component {
         
                 <Confirm
                     visible={this.state.showModal}
+                    onAccept={this.onAccept.bind(this)}
+                    onDecline={this.onDecline.bind(this)}
                 >
                     Are you sure you want to delete this?
                 </Confirm>
