@@ -1,4 +1,6 @@
-import Reactm { Component } from 'react';
+import React, { Component } from 'react';
+import { View, Text, Picker } from 'react-native';
+import { CardSection, Input } from './common';
 
 class EmployeeForm extends Component {
     render() {
@@ -47,5 +49,12 @@ class EmployeeForm extends Component {
         );
     }
 }
+
+const styles = {
+    pickerTextStyle: {
+        fontSize: 18,
+        paddingLeft: 20 // paddingLeft, NOT paddingleft
+    }
+};
 
 export default EmployeeForm;

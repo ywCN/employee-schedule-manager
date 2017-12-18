@@ -26,13 +26,6 @@ class EmployeeCreate extends Component {
     }
 }
 
-const styles = {
-    pickerTextStyle: {
-        fontSize: 18,
-        paddingLeft: 20 // paddingLeft, NOT paddingleft
-    }
-};
-
 const mapStateToProps = (state) => {
     const { name, phone, shift } = state.employeeForm;
 
