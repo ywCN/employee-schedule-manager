@@ -5,7 +5,7 @@ import { CardSection } from './common';
 
 class ListItem extends Component {
     onRowPress() {
-        Actions.employeeCreate();
+        Actions.employeeCreate(); // this is the form just for testing
     }
 
     render() {
