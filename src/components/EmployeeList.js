@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { View, Text } from 'react-native';
+import { ListView, View, Text } from 'react-native';
 import { employeesFetch } from '../actions';
 
 class EmployeeList extends Component {
     componentWillMount() { // whenever this comp will be show, try to get info
         this.props.employeesFetch();
+
+        const ds = new ListView.DataSource({
+            rowHasChanged: (r1, r2) => r1 !== r2
+        });
+
+        this.dataSource = ds.cloneWithRows(this.props.employees);
     }
 
     render() {
@@ -21,5 +27,7 @@ class EmployeeList extends Component {
         );
     }
 }
+
+
 
 export default connect(null, { employeesFetch })(EmployeeList);
