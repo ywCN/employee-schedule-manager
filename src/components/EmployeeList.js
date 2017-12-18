@@ -4,6 +4,10 @@ import { View, Text } from 'react-native';
 import { employeesFetch } from '../actions';
 
 class EmployeeList extends Component {
+    componentWillMount() { // whenever this comp will be show, try to get info
+        this.props.employeesFetch();
+    }
+
     render() {
         return (
             <View>
