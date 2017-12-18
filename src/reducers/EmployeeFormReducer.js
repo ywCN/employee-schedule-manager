@@ -5,7 +5,7 @@ import {
 const INITIAL_STATE = {
     name: '',
     phone: '',
-    shift: 
+    shift: ''
     // shift: 'Monday' // can work but not good
 };
 
