@@ -7,6 +7,8 @@ import { employeeUpdate, employeeSave } from '../actions';
 import { Card, CardSection, Button, Confirm } from './common';
 
 class EmployeeEdit extends Component {
+    state = { showModal: false };
+    
     componentWillMount() {
         // for each prop of employee, call action creato with key-value pair
         _.each(this.props.employee, (value, prop) => {
