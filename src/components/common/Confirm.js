@@ -3,12 +3,12 @@ import { Text, View, Modal } from 'react-native'; // modal has no default style
 import { CardSection } from './CardSection';
 import { Button } from './Button';
 
-const Confirm = () => {
+const Confirm = ({ children }) => {
     return ( // can think Modal as a big wrapper
         <Modal>
             <View>
                 <CardSection>
-                    <Text></Text>
+                    <Text>{children}</Text>
                 </CardSection>
 
                 <CardSection>
