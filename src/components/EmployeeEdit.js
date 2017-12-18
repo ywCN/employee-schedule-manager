@@ -32,41 +32,41 @@ class EmployeeEdit extends Component {
         return (
             <Card>
                 <EmployeeForm />
-
+        
                 <CardSection>
                     <Button onPress={this.onButtonPress.bind(this)}>
                         Save Changes
                     </Button>
                 </CardSection>
-
+        
                 <CardSection>
                     <Button onPress={this.onTextPress.bind(this)}>
                         Text Schedule
                     </Button>
                 </CardSection>
-
+        
                 <CardSection>
-                    <Button onPress={() => this.setState({ showModel: !this.state.showModal })}>
+                    <Button onPress={() => this.setState({ showModal: !this.state.showModal })}>
                         Fire Employee
                     </Button>
                 </CardSection>
-
+        
                 <Confirm
-                    visible={this.state.showModal}
+                visible={this.state.showModal}
                 >
-                    Are you sure you want to delete this?
+                Are you sure you want to delete this?
                 </Confirm>
             </Card>
-        );
-    }
-}
-
-const mapStateToProps = (state) => {
-    const { name, phone, shift } = state.employeeForm;
-
-    return { name, phone, shift };
-};
-
-export default connect(mapStateToProps, { 
-    employeeUpdate, employeeSave 
-})(EmployeeEdit);
+            );
+        }
+        }
+        
+        const mapStateToProps = (state) => {
+        const { name, phone, shift } = state.employeeForm;
+        
+        return { name, phone, shift };
+        };
+        
+        export default connect(mapStateToProps, {
+        employeeUpdate, employeeSave
+    })(EmployeeEdit);
