@@ -52,9 +52,9 @@ class EmployeeEdit extends Component {
                 </CardSection>
         
                 <Confirm
-                visible={this.state.showModal}
+                    visible={this.state.showModal}
                 >
-                Are you sure you want to delete this?
+                    Are you sure you want to delete this?
                 </Confirm>
             </Card>
             );
