@@ -3,11 +3,15 @@ import { Text, TouchableWithoutFeedback, View } from 'react-native';
 import { CardSection } from './common';
 
 class ListItem extends Component {
+    onRowPress() {
+        
+    }
+
     render() {
         const { name } = this.props.employee;
 
         return (
-            <TouchableWithoutFeedback>
+            <TouchableWithoutFeedback onPress={this.onRowPress.bind(this)}>
                 <View>
                     <CardSection>
                         <Text style={styles.titleStyle}>
