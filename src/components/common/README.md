@@ -1,1 +1,1 @@
-# resuable components
+# reusable components
